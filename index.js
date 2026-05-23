@@ -1,4 +1,3 @@
-import{getStockData} from './fakeStockAPI.js'
 
 setInterval(function(){
 const stockData=getStockData()
@@ -16,7 +15,7 @@ const timeEl=document.getElementById('time')
 
 const {Name,Symbol,Price,Time}=stockData
 
-const iconD=Price>prevPrice?'green.webp':Price<prevPrice?'red.webp':'grey.webp'
+const iconD=prevPrice===null?'grey.webp':Price>prevPrice?'green.webp':Price<prevPrice?'red.png':'grey.webp'
 priceiconEl.src=`svg/${iconD}`
 priceiconEl.alt='Arrow'
 
